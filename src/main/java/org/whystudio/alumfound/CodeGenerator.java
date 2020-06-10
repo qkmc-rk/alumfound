@@ -19,9 +19,9 @@ public class CodeGenerator {
 
     //mysql config
     private final static String driver = "com.mysql.cj.jdbc.Driver";
-    private final static String url = "jdbc:mysql://localhost:3306/alumfound?useUnicode=true&useSSL=false&characterEncoding=utf8";
+    private final static String url = "jdbc:mysql://39.101.167.48:3306/alumfound?useUnicode=true&useSSL=false&characterEncoding=utf8";
     private final static String username = "root";
-    private final static String password = "1314";
+    private final static String password = "@Sicau211";
 
     private final static String modelName= "org.whystudio";
     /**
@@ -32,7 +32,7 @@ public class CodeGenerator {
     public static String scanner(String tip) {
         Scanner scanner = new Scanner(System.in);
         StringBuilder help = new StringBuilder();
-        help.append("请输入" + tip + "：");
+        help.append("please input" + tip + ":");
         System.out.println(help.toString());
         if (scanner.hasNext()) {
             String ipt = scanner.next();
@@ -40,7 +40,7 @@ public class CodeGenerator {
                 return ipt;
             }
         }
-        throw new MybatisPlusException("请输入正确的" + tip + "！");
+        throw new MybatisPlusException("please input the correct" + tip + "!");
     }
 
     /**
@@ -57,7 +57,8 @@ public class CodeGenerator {
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor("Mrruan");
         gc.setOpen(false);
-        gc.setSwagger2(true); // 实体属性 Swagger2 注解
+        // 实体属性 Swagger2 注解
+        gc.setSwagger2(true);
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
@@ -71,7 +72,7 @@ public class CodeGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setModuleName(scanner("模块名"));
+        pc.setModuleName(scanner("model name"));
         pc.setParent(modelName);
         mpg.setPackageInfo(pc);
 
@@ -135,7 +136,7 @@ public class CodeGenerator {
         //strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
         // 写于父类中的公共字段
         //strategy.setSuperEntityColumns("id");
-        strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
+        strategy.setInclude(scanner("table name,english comma divide").split(","));
         //strategy.setControllerMappingHyphenStyle(true);
         //strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);

@@ -1,0 +1,6 @@
+ Consume Time£º470 ms 2020-06-10 22:34:24
+ Execute SQL£ºSELECT COUNT( 1 ) FROM file
+
+ Consume Time£º76 ms 2020-06-10 22:34:53
+ Execute SQL£ºSELECT COUNT( 1 ) FROM file
+
