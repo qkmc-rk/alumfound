@@ -2,6 +2,7 @@ package org.whystudio.alumfound.service;
 
 import org.whystudio.alumfound.entity.Beneficiary;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.whystudio.alumfound.vo.Response;
 
 /**
  * <p>
@@ -13,4 +14,13 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBeneficiaryService extends IService<Beneficiary> {
 
+    /**
+     * 返回列表 具有分页功能
+     * @param currentPage
+     * @param size
+     * @return
+     */
+    Response beneficiaryList(Integer currentPage, Integer size);
+
+    Response beneficiary(Long id);
 }

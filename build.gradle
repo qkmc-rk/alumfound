@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'org.whystudio'
-version = '0.0.1-SNAPSHOT'
+version = '1'
 sourceCompatibility = '1.8'
 
 configurations {
@@ -50,6 +50,9 @@ dependencies {
 	implementation 'io.springfox:springfox-swagger2:2.7.0'
 	implementation 'io.springfox:springfox-swagger-ui:2.7.0'
 	implementation 'com.alibaba:fastjson:1.2.60'
+
+	//儿子 糊涂啊!!!
+	compile 'cn.hutool:hutool-all:5.3.8'
 
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'mysql:mysql-connector-java'
