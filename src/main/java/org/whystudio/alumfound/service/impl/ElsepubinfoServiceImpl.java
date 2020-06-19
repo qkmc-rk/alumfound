@@ -34,7 +34,7 @@ public class ElsepubinfoServiceImpl extends ServiceImpl<ElsepubinfoMapper, Elsep
 
     @Override
     public Response elsePubInfoList(Integer currentPage, Integer size) {
-        Page<Elsepubinfo> page = new Page<>();
+        IPage<Elsepubinfo> page = new Page<>();
         if (null == currentPage || size == null){
             currentPage = 1;
             size = 5;

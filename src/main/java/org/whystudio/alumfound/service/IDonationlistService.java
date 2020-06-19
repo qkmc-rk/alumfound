@@ -2,6 +2,7 @@ package org.whystudio.alumfound.service;
 
 import org.whystudio.alumfound.entity.Donationlist;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.whystudio.alumfound.vo.Response;
 
 /**
  * <p>
@@ -13,4 +14,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IDonationlistService extends IService<Donationlist> {
 
+    Response donationlistList(Integer currentPage, Integer size);
+
+    Response oneDonationlist(Long id);
 }

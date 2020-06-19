@@ -37,3 +37,45 @@
  Consume Time��73 ms 2020-06-17 19:23:44
  Execute SQL��SELECT COUNT( 1 ) FROM file
 
+ Consume Time：72 ms 2020-06-19 12:42:29
+ Execute SQL：SELECT COUNT(1) FROM yearlyreport
+
+ Consume Time：64 ms 2020-06-19 12:42:29
+ Execute SQL：SELECT id,title,url,format,created,modified,is_public FROM yearlyreport LIMIT 0,5
+
+ Consume Time：63 ms 2020-06-19 12:42:35
+ Execute SQL：SELECT id,title,url,format,created,modified,is_public FROM yearlyreport WHERE id=1 
+
+ Consume Time：63 ms 2020-06-19 12:44:14
+ Execute SQL：SELECT id,title,url,format,created,modified,is_public FROM yearlyreport WHERE id=1 
+
+ Consume Time：75 ms 2020-06-19 12:44:49
+ Execute SQL：SELECT id,title,url,format,created,modified,is_public FROM yearlyreport WHERE id=1 
+
+ Consume Time：63 ms 2020-06-19 12:44:53
+ Execute SQL：SELECT id,title,url,format,created,modified,is_public FROM yearlyreport WHERE id=2 
+
+ Consume Time：63 ms 2020-06-19 12:44:53
+ Execute SQL：SELECT id,title,url,format,created,modified,is_public FROM yearlyreport WHERE id=2 
+
+ Consume Time：64 ms 2020-06-19 12:44:59
+ Execute SQL：SELECT id,title,url,format,created,modified,is_public FROM yearlyreport WHERE id=1 
+
+ Consume Time：64 ms 2020-06-19 12:45:12
+ Execute SQL：SELECT COUNT(1) FROM donationlist
+
+ Consume Time：64 ms 2020-06-19 12:45:13
+ Execute SQL：SELECT id,title,url,format,created,modified,is_public FROM donationlist LIMIT 0,5
+
+ Consume Time：64 ms 2020-06-19 12:45:32
+ Execute SQL：SELECT COUNT(1) FROM yearlyreport
+
+ Consume Time：64 ms 2020-06-19 12:45:33
+ Execute SQL：SELECT id,title,url,format,created,modified,is_public FROM yearlyreport LIMIT 0,5
+
+ Consume Time：63 ms 2020-06-19 12:45:38
+ Execute SQL：SELECT COUNT(1) FROM beneficiary
+
+ Consume Time：63 ms 2020-06-19 12:45:39
+ Execute SQL：SELECT id,title,url,format,created,modified,is_public FROM beneficiary LIMIT 0,5
+
