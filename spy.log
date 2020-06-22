@@ -79,3 +79,21 @@
  Consume Time：63 ms 2020-06-19 12:45:39
  Execute SQL：SELECT id,title,url,format,created,modified,is_public FROM beneficiary LIMIT 0,5
 
+ Consume Time：98 ms 2020-06-20 16:52:39
+ Execute SQL：SELECT COUNT(1) FROM yearlyreport
+
+ Consume Time：71 ms 2020-06-20 16:52:39
+ Execute SQL：SELECT id,title,url,format,created,modified,is_public FROM yearlyreport LIMIT 0,5
+
+ Consume Time：71 ms 2020-06-20 16:52:51
+ Execute SQL：SELECT id,title,url,format,created,modified,is_public FROM yearlyreport WHERE id=1 
+
+ Consume Time：71 ms 2020-06-20 16:53:03
+ Execute SQL：SELECT COUNT(1) FROM elsepubinfo
+
+ Consume Time：72 ms 2020-06-20 16:53:03
+ Execute SQL：SELECT id,title,url,format,created,modified,is_public,theme FROM elsepubinfo LIMIT 0,5
+
+ Consume Time：72 ms 2020-06-20 16:54:21
+ Execute SQL：SELECT id,title,url,format,created,modified,is_public,theme FROM elsepubinfo WHERE id=6 
+

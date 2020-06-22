@@ -5,6 +5,8 @@ import org.whystudio.alumfound.mapper.DonationprojectMapper;
 import org.whystudio.alumfound.service.IDonationprojectService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+import org.whystudio.alumfound.util.ResponseUtil;
+import org.whystudio.alumfound.vo.Response;
 
 /**
  * <p>
@@ -17,4 +19,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class DonationprojectServiceImpl extends ServiceImpl<DonationprojectMapper, Donationproject> implements IDonationprojectService {
 
+    @Override
+    public Response donationprojectList() {
+        return ResponseUtil.autoJudgeByData(getBaseMapper().selectList(null));
+    }
 }
