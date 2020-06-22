@@ -2,6 +2,7 @@ package org.whystudio.alumfound.service;
 
 import org.whystudio.alumfound.entity.Lawregulation;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.whystudio.alumfound.vo.Response;
 
 /**
  * <p>
@@ -13,4 +14,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ILawregulationService extends IService<Lawregulation> {
 
+    Response lawregulationList(Integer currentPage, Integer size);
+
+    Response oneLawregulation(Long id);
 }

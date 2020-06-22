@@ -1,9 +1,10 @@
 package org.whystudio.alumfound.controller;
 
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
+import org.whystudio.alumfound.vo.Response;
 
 /**
  * <p>
@@ -15,7 +16,19 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/alumfound/lawregulation")
-public class LawregulationController {
+public class LawregulationController extends BaseController{
+
+    @GetMapping("")
+    @ApiOperation(value = "政策法规列表", notes = "不传参数默认第一页五条记录")
+    public Response lawregulationList(@RequestParam(required = false) Integer currentPage, @RequestParam(required = false) Integer size){
+        return lawregulationService.lawregulationList(currentPage, size);
+    }
+
+    @GetMapping("/{id}")
+    @ApiOperation(value = "根据ID查询某条政策法规信息", notes = "传id id通过list获取")
+    public Response oneLawregulation(@PathVariable Long id) {
+        return lawregulationService.oneLawregulation(id);
+    }
 
 }
 

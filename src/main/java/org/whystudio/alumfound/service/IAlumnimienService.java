@@ -2,6 +2,7 @@ package org.whystudio.alumfound.service;
 
 import org.whystudio.alumfound.entity.Alumnimien;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.whystudio.alumfound.vo.Response;
 
 /**
  * <p>
@@ -13,4 +14,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IAlumnimienService extends IService<Alumnimien> {
 
+    Response alumnimienList(Integer currentPage, Integer size);
+
+    Response oneAlumnimien(Long id);
 }

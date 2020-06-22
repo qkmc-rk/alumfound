@@ -2,6 +2,7 @@ package org.whystudio.alumfound.service;
 
 import org.whystudio.alumfound.entity.Managesystem;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.whystudio.alumfound.vo.Response;
 
 /**
  * <p>
@@ -13,4 +14,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IManagesystemService extends IService<Managesystem> {
 
+    Response managesystemList(Integer currentPage, Integer size);
+
+    Response oneManagesystem(Long id);
 }

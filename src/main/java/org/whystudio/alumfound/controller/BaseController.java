@@ -27,4 +27,31 @@ public abstract class BaseController {
     @Autowired
     IDonationprojectService donationprojectService;
 
+    @Autowired
+    IDonationinfoService donationinfoService;
+
+    @Autowired
+    ILawregulationService lawregulationService;
+
+    @Autowired
+    IAlumniinfoService alumniinfoService;
+
+    @Autowired
+    IAlumnimienService alumnimienService;
+
+    @Autowired
+    IBannerService bannerService;
+
+    @Autowired
+    IFileService fileService;
+
+    @Autowired
+    IManagesystemService managesystemService;
+
+    @Autowired
+    INewsService newsService;
+
+    @Autowired
+    IPicnewsService picnewsService;
+
 }
