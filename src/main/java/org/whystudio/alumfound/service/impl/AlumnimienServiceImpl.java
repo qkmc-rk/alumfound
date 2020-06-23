@@ -1,5 +1,7 @@
 package org.whystudio.alumfound.service.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.whystudio.alumfound.entity.Alumnimien;
 import org.whystudio.alumfound.mapper.AlumnimienMapper;
 import org.whystudio.alumfound.service.IAlumnimienService;
@@ -16,5 +18,15 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class AlumnimienServiceImpl extends ServiceImpl<AlumnimienMapper, Alumnimien> implements IAlumnimienService {
+    @Override
+    public IPage<Alumnimien> getAlumnimienList(Integer page) {
+        Page<Alumnimien> alumnimienPage = new Page<>();
+        return getBaseMapper().selectPage(alumnimienPage, null);
+    }
 
+    @Override
+    public Alumnimien getAlumnimien(Long id) {
+
+        return getBaseMapper().selectById(id);
+    }
 }
