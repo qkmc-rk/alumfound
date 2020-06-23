@@ -97,3 +97,39 @@
  Consume Time：72 ms 2020-06-20 16:54:21
  Execute SQL：SELECT id,title,url,format,created,modified,is_public,theme FROM elsepubinfo WHERE id=6 
 
+ Consume Time：154 ms 2020-06-23 20:20:53
+ Execute SQL：SELECT COUNT(1) FROM donationinfo WHERE (amount IS NULL AND address IS NULL AND created IS NULL AND project IS NULL AND donator IS NULL AND message IS NULL AND isLady IS NULL AND isSchoolfellow IS NULL AND contact IS NULL AND isPublic IS NULL AND modified IS NULL AND id IS NULL AND clazz IS NULL AND projectid = 2233)
+
+ Consume Time：108 ms 2020-06-23 20:46:49
+ Execute SQL：SELECT COUNT(1) FROM donationinfo WHERE (amount IS NULL AND address IS NULL AND is_schoolfellow IS NULL AND created IS NULL AND is_lady IS NULL AND project IS NULL AND donator IS NULL AND message IS NULL AND contact IS NULL AND is_public IS NULL AND modified IS NULL AND id IS NULL AND clazz IS NULL AND projectid = 2233)
+
+ Consume Time：111 ms 2020-06-23 21:03:56
+ Execute SQL：SELECT id,cover,title,author,reader,origin,hits,content,created,modified,is_recommend FROM alumnimien WHERE id=1 
+
+ Consume Time：78 ms 2020-06-23 21:04:01
+ Execute SQL：SELECT id,cover,title,author,reader,origin,hits,content,created,modified,is_recommend FROM alumnimien WHERE id=1 
+
+ Consume Time：69 ms 2020-06-23 21:04:07
+ Execute SQL：SELECT COUNT(1) FROM alumnimien
+
+ Consume Time：100 ms 2020-06-23 21:04:07
+ Execute SQL：SELECT id,cover,title,author,reader,origin,hits,content,created,modified,is_recommend FROM alumnimien LIMIT 0,10
+
+ Consume Time：156 ms 2020-06-23 21:07:05
+ Execute SQL：SELECT COUNT(1) FROM donationinfo WHERE (amount IS NULL AND address IS NULL AND is_schoolfellow IS NULL AND created IS NULL AND is_lady IS NULL AND project IS NULL AND donator IS NULL AND message IS NULL AND contact IS NULL AND is_public IS NULL AND modified IS NULL AND id = 1 AND clazz IS NULL AND projectid IS NULL)
+
+ Consume Time：149 ms 2020-06-23 21:09:01
+ Execute SQL：SELECT COUNT(1) FROM donationinfo WHERE (amount IS NULL AND address IS NULL AND is_schoolfellow IS NULL AND created IS NULL AND is_lady IS NULL AND project IS NULL AND donator IS NULL AND message IS NULL AND contact IS NULL AND is_public IS NULL AND modified IS NULL AND id = 1 AND clazz IS NULL AND projectid IS NULL)
+
+ Consume Time：161 ms 2020-06-23 21:11:07
+ Execute SQL：SELECT COUNT(1) FROM donationinfo WHERE (amount IS NULL AND address IS NULL AND is_schoolfellow IS NULL AND created IS NULL AND is_lady IS NULL AND project IS NULL AND donator IS NULL AND message IS NULL AND contact IS NULL AND is_public IS NULL AND modified IS NULL AND id = 1 AND clazz IS NULL AND projectid IS NULL)
+
+ Consume Time：107 ms 2020-06-23 21:12:20
+ Execute SQL：SELECT COUNT(1) FROM donationinfo WHERE (id = 1)
+
+ Consume Time：94 ms 2020-06-23 21:13:34
+ Execute SQL：SELECT COUNT(1) FROM alumnimien
+
+ Consume Time：109 ms 2020-06-23 21:13:35
+ Execute SQL：SELECT id,cover,title,author,reader,origin,hits,content,created,modified,is_recommend FROM alumnimien LIMIT 0,10
+

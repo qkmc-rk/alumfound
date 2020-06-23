@@ -1,5 +1,6 @@
 package org.whystudio.alumfound.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.whystudio.alumfound.entity.News;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -12,5 +13,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2020-06-10
  */
 public interface INewsService extends IService<News> {
+
+    IPage<News> newsForPage(Integer page);
+
+    News getNews(Long id);
 
 }

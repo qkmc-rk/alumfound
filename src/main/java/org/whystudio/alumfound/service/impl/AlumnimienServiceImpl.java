@@ -1,5 +1,6 @@
 package org.whystudio.alumfound.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.whystudio.alumfound.entity.Alumnimien;
@@ -21,12 +22,12 @@ public class AlumnimienServiceImpl extends ServiceImpl<AlumnimienMapper, Alumnim
     @Override
     public IPage<Alumnimien> getAlumnimienList(Integer page) {
         Page<Alumnimien> alumnimienPage = new Page<>();
+        alumnimienPage.setSize(Constant.DEFAULT.getSIZE());
         return getBaseMapper().selectPage(alumnimienPage, null);
     }
 
     @Override
     public Alumnimien getAlumnimien(Long id) {
-
         return getBaseMapper().selectById(id);
     }
 }

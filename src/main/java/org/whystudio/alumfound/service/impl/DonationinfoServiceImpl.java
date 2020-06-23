@@ -2,6 +2,7 @@ package org.whystudio.alumfound.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.core.toolkit.BeanUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.whystudio.alumfound.entity.Donationinfo;
@@ -33,10 +34,10 @@ public class DonationinfoServiceImpl extends ServiceImpl<DonationinfoMapper, Don
      */
     @Override
     public IPage<Donationinfo> getDonations(Integer currentPage, Map<String, Object> map) {
-        QueryWrapper<Donationinfo> queryWrapper = new QueryWrapper<>();
-        queryWrapper.orderByDesc("created");
-        queryWrapper.allEq(map);
-        return getBaseMapper().selectPage(new Page<Donationinfo>(), queryWrapper);
+        Page<Donationinfo> donationinfoPage = new Page<>();
+        donationinfoPage.setSize(Constant.DEFAULT.getSIZE());
+        donationinfoPage.addOrder(OrderItem.desc("created"));
+        return getBaseMapper().selectPage(donationinfoPage, null);
 
     }
 }
