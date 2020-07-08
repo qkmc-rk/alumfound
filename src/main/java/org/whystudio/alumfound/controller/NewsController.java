@@ -48,7 +48,6 @@ public class NewsController extends BaseController{
     public Response list(@RequestParam(value = "page", required = false, defaultValue = "0") Integer page) {
         return ResponseUtil.autoJudgeByData(newsService.newsForPage(page));
     }
-
     @GetMapping("/detail")
     @ApiOperation(value = "获取指定新闻详情")
     public Response detail(@RequestParam(value = "id") Long id) {

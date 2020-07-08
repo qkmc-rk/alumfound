@@ -15,7 +15,6 @@ import org.whystudio.alumfound.vo.Response;
  */
 public interface IPicnewsService extends IService<Picnews> {
 
-
     Response picnewsList(Integer currentPage, Integer size);
 
     Response onePicnews(Long id);

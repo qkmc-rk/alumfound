@@ -2,7 +2,6 @@ package org.whystudio.alumfound.controller;
 
 
 import io.swagger.annotations.ApiOperation;
-
 import org.springframework.web.bind.annotation.*;
 
 import org.whystudio.alumfound.vo.Response;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.whystudio.alumfound.service.ILawregulationService;
 import org.whystudio.alumfound.util.ResponseUtil;
+import org.whystudio.alumfound.vo.Response;
 
 import javax.annotation.Resource;
 

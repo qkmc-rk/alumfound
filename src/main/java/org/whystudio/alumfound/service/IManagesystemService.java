@@ -21,6 +21,4 @@ public interface IManagesystemService extends IService<Managesystem> {
     IPage<Managesystem> page(Integer page);
 
     Managesystem getById(Long id);
-
-
 }

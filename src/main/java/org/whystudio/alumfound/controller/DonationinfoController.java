@@ -39,5 +39,6 @@ public class DonationinfoController {
         Map<String, Object> map = BeanUtils.beanToMap(donationinfo);
         return ResponseUtil.autoJudgeByData(donationinfoService.getDonations(page, map));
     }
+
 }
 

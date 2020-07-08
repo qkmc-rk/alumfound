@@ -15,7 +15,6 @@ import org.whystudio.alumfound.vo.Response;
  */
 public interface INewsService extends IService<News> {
 
-
     Response newsList(Integer currentPage, Integer size);
 
     Response oneNews(Long id);

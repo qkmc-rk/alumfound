@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.whystudio.alumfound.service.IAlumnimienService;
 import org.whystudio.alumfound.util.ResponseUtil;
+import org.whystudio.alumfound.vo.Response;
 
 import javax.annotation.Resource;
 

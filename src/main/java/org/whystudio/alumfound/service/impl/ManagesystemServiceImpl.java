@@ -2,9 +2,7 @@ package org.whystudio.alumfound.service.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-
 import org.whystudio.alumfound.entity.Lawregulation;
-
 import org.whystudio.alumfound.entity.Managesystem;
 import org.whystudio.alumfound.mapper.ManagesystemMapper;
 import org.whystudio.alumfound.service.IManagesystemService;
