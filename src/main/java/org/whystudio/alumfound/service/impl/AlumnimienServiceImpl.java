@@ -1,5 +1,7 @@
 package org.whystudio.alumfound.service.impl;
 
+
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.whystudio.alumfound.entity.Alumnimien;
@@ -21,6 +23,12 @@ import org.whystudio.alumfound.vo.Response;
  */
 @Service
 public class AlumnimienServiceImpl extends ServiceImpl<AlumnimienMapper, Alumnimien> implements IAlumnimienService {
+    @Override
+    public IPage<Alumnimien> getAlumnimienList(Integer page) {
+        Page<Alumnimien> alumnimienPage = new Page<>();
+        alumnimienPage.setSize(Constant.DEFAULT.getSIZE());
+        return getBaseMapper().selectPage(alumnimienPage, null);
+    }
 
     @Override
     public Response alumnimienList(Integer currentPage, Integer size) {
@@ -35,10 +43,14 @@ public class AlumnimienServiceImpl extends ServiceImpl<AlumnimienMapper, Alumnim
 
     @Override
     public Response oneAlumnimien(Long id) {
-        if (id < 0L){
+        if (id < 0L) {
             return ResponseUtil.failWithoutData("error id:" + id);
         }
         Alumnimien alumnimien = getBaseMapper().selectById(id);
         return ResponseUtil.autoJudgeByData(alumnimien);
+    }
+    @Override
+    public Alumnimien getAlumnimien(Long id) {
+        return getBaseMapper().selectById(id);
     }
 }

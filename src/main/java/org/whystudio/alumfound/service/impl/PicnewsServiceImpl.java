@@ -5,6 +5,9 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.whystudio.alumfound.entity.Managesystem;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.metadata.OrderItem;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.whystudio.alumfound.entity.Picnews;
 import org.whystudio.alumfound.mapper.PicnewsMapper;
 import org.whystudio.alumfound.service.IPicnewsService;
@@ -40,10 +43,21 @@ public class PicnewsServiceImpl extends ServiceImpl<PicnewsMapper, Picnews> impl
 
     @Override
     public Response onePicnews(Long id) {
-        if (id < 0L){
+        if (id < 0L) {
             return ResponseUtil.failWithoutData("error id:" + id);
         }
         Picnews picnews = getBaseMapper().selectById(id);
         return ResponseUtil.autoJudgeByData(picnews);
+    }
+    @Override
+    public IPage<Picnews> page(Integer page) {
+        Page<Picnews> picnewsPage = new Page<>();
+        picnewsPage.addOrder(OrderItem.desc("created"));
+        return getBaseMapper().selectPage(picnewsPage, null);
+    }
+
+    @Override
+    public Picnews picNews(Long id) {
+        return getBaseMapper().selectById(id);
     }
 }

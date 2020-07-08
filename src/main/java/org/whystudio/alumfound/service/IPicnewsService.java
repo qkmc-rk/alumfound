@@ -1,5 +1,6 @@
 package org.whystudio.alumfound.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.whystudio.alumfound.entity.Picnews;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.whystudio.alumfound.vo.Response;
@@ -14,7 +15,13 @@ import org.whystudio.alumfound.vo.Response;
  */
 public interface IPicnewsService extends IService<Picnews> {
 
+
     Response picnewsList(Integer currentPage, Integer size);
 
     Response onePicnews(Long id);
+
+    IPage<Picnews> page(Integer page);
+
+    Picnews picNews(Long id);
+
 }
