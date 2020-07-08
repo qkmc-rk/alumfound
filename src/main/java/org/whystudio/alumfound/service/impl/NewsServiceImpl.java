@@ -3,6 +3,7 @@ package org.whystudio.alumfound.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.whystudio.alumfound.entity.News;
 import org.whystudio.alumfound.entity.Picnews;
@@ -40,10 +41,21 @@ public class NewsServiceImpl extends ServiceImpl<NewsMapper, News> implements IN
 
     @Override
     public Response oneNews(Long id) {
-        if (id < 0L){
+        if (id < 0L) {
             return ResponseUtil.failWithoutData("error id:" + id);
         }
         News news = getBaseMapper().selectById(id);
         return ResponseUtil.autoJudgeByData(news);
+    }
+    @Override
+    public IPage<News> newsForPage(Integer page) {
+        Page<News> newsPage = new Page<>();
+        newsPage.setSize(Constant.DEFAULT.getSIZE());
+        return getBaseMapper().selectPage(newsPage, null);
+    }
+
+    @Override
+    public News getNews(Long id) {
+        return getBaseMapper().selectById(id);
     }
 }

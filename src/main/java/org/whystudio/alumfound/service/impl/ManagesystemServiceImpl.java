@@ -2,7 +2,9 @@ package org.whystudio.alumfound.service.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+
 import org.whystudio.alumfound.entity.Lawregulation;
+
 import org.whystudio.alumfound.entity.Managesystem;
 import org.whystudio.alumfound.mapper.ManagesystemMapper;
 import org.whystudio.alumfound.service.IManagesystemService;
@@ -35,10 +37,21 @@ public class ManagesystemServiceImpl extends ServiceImpl<ManagesystemMapper, Man
 
     @Override
     public Response oneManagesystem(Long id) {
-        if (id < 0L){
+        if (id < 0L) {
             return ResponseUtil.failWithoutData("error id:" + id);
         }
         Managesystem managesystem = getBaseMapper().selectById(id);
         return ResponseUtil.autoJudgeByData(managesystem);
+    }
+    @Override
+    public IPage<Managesystem> page(Integer page) {
+        Page<Managesystem> managesystemPage = new Page<>();
+        managesystemPage.setSize(Constant.DEFAULT.getSIZE());
+        return getBaseMapper().selectPage(managesystemPage, null);
+    }
+
+    @Override
+    public Managesystem getById(Long id) {
+        return getBaseMapper().selectById(id);
     }
 }

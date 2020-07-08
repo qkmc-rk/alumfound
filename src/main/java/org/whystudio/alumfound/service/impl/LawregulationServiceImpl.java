@@ -36,11 +36,16 @@ public class LawregulationServiceImpl extends ServiceImpl<LawregulationMapper, L
 
     @Override
     public Response oneLawregulation(Long id) {
-        if (id < 0L){
+        if (id < 0L) {
             return ResponseUtil.failWithoutData("error id:" + id);
         }
         Lawregulation lawregulation = getBaseMapper().selectById(id);
         return ResponseUtil.autoJudgeByData(lawregulation);
-
+    }
+    @Override
+    public IPage<Lawregulation> page(Integer page) {
+        Page<Lawregulation> lawregulationPage = new Page<>();
+        lawregulationPage.setSize(Constant.DEFAULT.getSIZE());
+        return getBaseMapper().selectPage(lawregulationPage, null);
     }
 }

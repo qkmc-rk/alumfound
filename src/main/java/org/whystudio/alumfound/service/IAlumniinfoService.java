@@ -13,4 +13,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IAlumniinfoService extends IService<Alumniinfo> {
 
+    Integer saveInfo(Alumniinfo alumniinfo);
+
+    Alumniinfo getAlumniinfoByPhone(String phone);
+
+    Alumniinfo getAlumniinfo(Long id);
+
 }
