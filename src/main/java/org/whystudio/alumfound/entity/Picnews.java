@@ -77,4 +77,7 @@ public class Picnews implements Serializable {
     @TableField(exist = false)
     private String nextTitle;
 
+    @ApiModelProperty(value = "简介")
+    private String introduce;
+
 }

@@ -74,5 +74,8 @@ public class News implements Serializable {
     @TableField(exist = false)
     private String nextTitle;
 
+    @ApiModelProperty(value = "简介")
+    @TableField(exist = false)
+    private String introduce;
 
 }
