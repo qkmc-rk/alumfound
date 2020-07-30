@@ -23,7 +23,7 @@ public class ResponseUtil {
     }
 
     public static <T> Response<T> autoJudgeByData(T data) {
-        return (null == data)? new Response<T>(FAIL_STATUS, "null", data):
+        return (null == data)? new Response<T>(FAIL_STATUS, "未找到数据", data):
                 new Response<T>(SUCCESS_STATUS, "success", data);
     }
 }

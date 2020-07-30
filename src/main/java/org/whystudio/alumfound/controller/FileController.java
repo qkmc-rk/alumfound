@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2020-06-10
  */
 @RestController
-@RequestMapping("/alumfound/file")
+@RequestMapping("/file")
 public class FileController {
+
+
 
 }
 

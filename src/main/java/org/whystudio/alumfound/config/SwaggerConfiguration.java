@@ -44,12 +44,13 @@ import springfox.documentation.spring.web.plugins.Docket;
 @ComponentScan(basePackages = {"org.whystudio.alumfound.controller"})
 public class SwaggerConfiguration implements WebMvcConfigurer {
 
+
     ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("校友会基金会后台")
                 .description("coding by whystudio")
                 .license("0")
-                .licenseUrl("= =！")
+                .licenseUrl("http://www.baidu.com")
                 .termsOfServiceUrl("")
                 .version("2.0")
                 .build();

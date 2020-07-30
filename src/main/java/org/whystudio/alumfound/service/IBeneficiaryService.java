@@ -22,5 +22,7 @@ public interface IBeneficiaryService extends IService<Beneficiary> {
      */
     Response beneficiaryList(Integer currentPage, Integer size);
 
-    Response beneficiary(Long id);
+    Beneficiary selectBeneficiary(Long id);
+
+    // Response beneficiary(Long id);
 }

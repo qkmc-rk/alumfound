@@ -1,10 +1,9 @@
 package org.whystudio.alumfound.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import org.whystudio.alumfound.entity.Donationinfo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.whystudio.alumfound.entity.Donationinfo;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,6 +15,9 @@ import java.util.Map;
  * @since 2020-06-10
  */
 public interface IDonationinfoService extends IService<Donationinfo> {
+
+
+    IPage<Donationinfo> donationinfoList(Integer currentPage, Integer size);
 
     IPage<Donationinfo> getDonations(Integer currentPage, Map<String, Object> map);
 

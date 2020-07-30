@@ -1,12 +1,10 @@
 package org.whystudio.alumfound.controller;
 
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import javafx.scene.chart.ValueAxis;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.web.bind.annotation.RestController;
 import org.whystudio.alumfound.constant.SQLResult;
 import org.whystudio.alumfound.entity.Alumniinfo;
@@ -24,8 +22,9 @@ import javax.annotation.Resource;
  * @author Mrruan
  * @since 2020-06-10
  */
+@Api(tags = "校友信息模块")
 @RestController
-@RequestMapping("/alumfound/alumniinfo")
+@RequestMapping("/alumniinfo")
 public class AlumniinfoController {
 
     @Resource

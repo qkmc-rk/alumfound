@@ -1,8 +1,7 @@
 package org.whystudio.alumfound.service;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import org.whystudio.alumfound.entity.Lawregulation;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.whystudio.alumfound.entity.Lawregulation;
 import org.whystudio.alumfound.vo.Response;
 
 /**
@@ -17,6 +16,8 @@ public interface ILawregulationService extends IService<Lawregulation> {
 
     Response lawregulationList(Integer currentPage, Integer size);
 
-    Response oneLawregulation(Long id);
-    IPage<Lawregulation> page(Integer page);
+    // Response oneLawregulation(Long id);
+
+    Lawregulation selectLawRegulation(Long id);
+    // IPage<Lawregulation> page(Integer page);
 }

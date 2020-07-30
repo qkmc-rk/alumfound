@@ -1,15 +1,17 @@
 package org.whystudio.alumfound.entity;
 
-import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
-import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -69,5 +71,17 @@ public class Donationinfo implements Serializable {
     @ApiModelProperty(value = "修改时间")
     private LocalDateTime modified;
 
+
+    @TableField(exist = false)
+    private Long lastId;
+
+    @TableField(exist = false)
+    private String lastTitle;
+
+    @TableField(exist = false)
+    private Long nextId;
+
+    @TableField(exist = false)
+    private String nextTitle;
 
 }

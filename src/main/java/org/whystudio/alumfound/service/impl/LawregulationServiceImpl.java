@@ -1,13 +1,13 @@
 package org.whystudio.alumfound.service.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import org.whystudio.alumfound.entity.Elsepubinfo;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.stereotype.Service;
 import org.whystudio.alumfound.entity.Lawregulation;
 import org.whystudio.alumfound.mapper.LawregulationMapper;
 import org.whystudio.alumfound.service.ILawregulationService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.springframework.stereotype.Service;
 import org.whystudio.alumfound.util.ResponseUtil;
 import org.whystudio.alumfound.vo.Response;
 
@@ -34,18 +34,56 @@ public class LawregulationServiceImpl extends ServiceImpl<LawregulationMapper, L
 
     }
 
+    // @Override
+    // public Response oneLawregulation(Long id) {
+    //     if (id < 0L) {
+    //         return ResponseUtil.failWithoutData("error id:" + id);
+    //     }
+    //     Lawregulation lawregulation = getBaseMapper().selectById(id);
+    //     return ResponseUtil.autoJudgeByData(lawregulation);
+    // }
+
     @Override
-    public Response oneLawregulation(Long id) {
-        if (id < 0L) {
-            return ResponseUtil.failWithoutData("error id:" + id);
-        }
+    public Lawregulation selectLawRegulation(Long id) {
         Lawregulation lawregulation = getBaseMapper().selectById(id);
-        return ResponseUtil.autoJudgeByData(lawregulation);
+
+        if (null == lawregulation) {
+            return null;
+        }
+
+        Lawregulation last = getBaseMapper().selectOne(
+                Wrappers.<Lawregulation>lambdaQuery()
+                        .gt(Lawregulation::getModified, lawregulation.getModified())
+                        .orderByAsc(Lawregulation::getModified)
+                        .last("limit 1")
+        );
+
+        Lawregulation next = getBaseMapper().selectOne(
+
+                Wrappers.<Lawregulation>lambdaQuery()
+                        .lt(Lawregulation::getModified, lawregulation.getModified())
+                        .orderByDesc(Lawregulation::getModified)
+                        .last("limit 1")
+
+        );
+
+        if (null != last) {
+            lawregulation.setLastId(last.getId());
+            lawregulation.setLastTitle(last.getTitle());
+        }
+
+        if (null != next) {
+            lawregulation.setNextId(next.getId());
+            lawregulation.setNextTitle(next.getTitle());
+        }
+
+        return lawregulation;
     }
-    @Override
-    public IPage<Lawregulation> page(Integer page) {
-        Page<Lawregulation> lawregulationPage = new Page<>();
-        lawregulationPage.setSize(Constant.DEFAULT.getSIZE());
-        return getBaseMapper().selectPage(lawregulationPage, null);
-    }
+
+    // @Override
+    // public IPage<Lawregulation> page(Integer page) {
+    //     Page<Lawregulation> lawregulationPage = new Page<>();
+    //     lawregulationPage.setSize(Constant.DEFAULT.getSIZE());
+    //     return getBaseMapper().selectPage(lawregulationPage, null);
+    // }
 }

@@ -1,15 +1,13 @@
 package org.whystudio.alumfound.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.metadata.OrderItem;
-import com.baomidou.mybatisplus.core.toolkit.BeanUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.stereotype.Service;
 import org.whystudio.alumfound.entity.Donationinfo;
 import org.whystudio.alumfound.mapper.DonationinfoMapper;
 import org.whystudio.alumfound.service.IDonationinfoService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
@@ -23,6 +21,19 @@ import java.util.Map;
  */
 @Service
 public class DonationinfoServiceImpl extends ServiceImpl<DonationinfoMapper, Donationinfo> implements IDonationinfoService {
+
+
+    @Override
+    public IPage<Donationinfo> donationinfoList(Integer currentPage, Integer size) {
+        Page<Donationinfo> page = new Page<>();
+
+        page.setCurrent(null == currentPage ? 1 : currentPage);
+        page.setSize(null == size ? 5 : size);
+
+        IPage<Donationinfo> donationinfoIPage = getBaseMapper().selectPage(page,null);
+        return donationinfoIPage;
+
+    }
 
     /**
      *

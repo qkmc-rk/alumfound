@@ -28,6 +28,7 @@ public class AlumniinfoServiceImpl extends ServiceImpl<AlumniinfoMapper, Alumnii
         return getBaseMapper().insert(alumniinfo);
     }
 
+
     @Override
     public Alumniinfo getAlumniinfoByPhone(String phone) {
         QueryWrapper<Alumniinfo> stringQueryWrapper = new QueryWrapper<>();

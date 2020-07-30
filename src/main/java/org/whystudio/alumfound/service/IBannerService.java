@@ -3,6 +3,8 @@ package org.whystudio.alumfound.service;
 import org.whystudio.alumfound.entity.Banner;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  * 主页banner 服务类
@@ -13,4 +15,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBannerService extends IService<Banner> {
 
+
+     List<Banner> bannerList() ;
 }

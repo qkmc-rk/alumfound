@@ -1,8 +1,7 @@
 package org.whystudio.alumfound.service;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import org.whystudio.alumfound.entity.Alumnimien;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.whystudio.alumfound.entity.Alumnimien;
 import org.whystudio.alumfound.vo.Response;
 
 /**
@@ -16,8 +15,13 @@ import org.whystudio.alumfound.vo.Response;
 public interface IAlumnimienService extends IService<Alumnimien> {
 
     Response alumnimienList(Integer currentPage, Integer size);
-    Response oneAlumnimien(Long id);
-    IPage<Alumnimien> getAlumnimienList(Integer page);
-    Alumnimien getAlumnimien(Long id);
+
+    Alumnimien selectAlumnimien(Long id);
+
+    // Response oneAlumnimien(Long id);
+
+    // IPage<Alumnimien> getAlumnimienList(Integer page);
+
+    // Alumnimien getAlumnimien(Long id);
 
 }

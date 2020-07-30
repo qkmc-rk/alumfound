@@ -19,7 +19,7 @@ public interface IElsepubinfoService extends IService<Elsepubinfo> {
      * @param id
      * @return
      */
-    Response oneElsePubInfo(Long id);
+    // Response oneElsePubInfo(Long id);
 
     /**
      * 返回列表 有分页 如果前端不传分页数据， 返回第一页的五条数据
@@ -28,4 +28,6 @@ public interface IElsepubinfoService extends IService<Elsepubinfo> {
      * @param size
      */
     Response elsePubInfoList(Integer currentPage, Integer size);
+
+    Elsepubinfo selectElsePubInfo(Long id);
 }

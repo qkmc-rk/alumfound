@@ -23,8 +23,8 @@ public class AlumfoundApplication implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		logger.info("Tomcat服务启动完成: http://{}:{}{}", "[domain]", port, context);
-		logger.info("Swagger2 API文档: http://{}:{}{}/swagger-ui.html", "[domain]", port, context);
+		logger.info("Tomcat服务启动完成: http://{}:{}{}", "localhost", port, context);
+		logger.info("Swagger2 API文档: http://{}:{}{}/swagger-ui.html", "localhost", port, context);
 	}
 
 	public static void main(String[] args) {
