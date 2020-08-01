@@ -1309,3 +1309,12 @@
  Consume Timeï¼š70 ms 2020-07-30 11:21:24
  Execute SQLï¼šSELECT id,title,url,format,created,modified,is_public FROM donationlist WHERE id=1 
 
+ Consume Time£º65 ms 2020-07-30 17:26:20
+ Execute SQL£ºSELECT COUNT( 1 ) FROM file
+
+ Consume Time£º64 ms 2020-07-30 17:27:17
+ Execute SQL£ºSELECT COUNT( 1 ) FROM file
+
+ Consume Time£º64 ms 2020-07-30 17:27:30
+ Execute SQL£ºSELECT COUNT( 1 ) FROM file
+

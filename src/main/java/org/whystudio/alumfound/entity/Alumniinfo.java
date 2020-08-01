@@ -60,6 +60,73 @@ public class Alumniinfo implements Serializable {
     @ApiModelProperty(value = "修改时间")
     private LocalDateTime modified;
 
+    @ApiModelProperty(value = "领域")
+    private String domain;
+
+    @ApiModelProperty(value = "性别")
+    private String sex;
+
+    @ApiModelProperty(value = "邮箱")
+    private String mail;
+
+    @ApiModelProperty(value = "培养层次")
+    private String level;
+
+    @ApiModelProperty(value = "学习开始时间")
+    private LocalDateTime starttime;
+
+    @ApiModelProperty(value = "学习结束时间")
+    private LocalDateTime endtime;
+
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    public LocalDateTime getStarttime() {
+        return starttime;
+    }
+
+    public void setStarttime(LocalDateTime starttime) {
+        this.starttime = starttime;
+    }
+
+    public LocalDateTime getEndtime() {
+        return endtime;
+    }
+
+    public void setEndtime(LocalDateTime endtime) {
+        this.endtime = endtime;
+    }
+
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
