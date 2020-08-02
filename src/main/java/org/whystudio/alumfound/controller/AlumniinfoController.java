@@ -25,7 +25,7 @@ import javax.annotation.Resource;
 @Api(tags = "校友信息模块")
 @RestController
 @RequestMapping("/alumniinfo")
-public class AlumniinfoController {
+public class AlumniinfoController extends BaseController {
 
     @Resource
     IAlumniinfoService iAlumniinfoService;
