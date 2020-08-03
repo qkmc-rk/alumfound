@@ -32,7 +32,7 @@ public class AlumniinfoServiceImpl extends ServiceImpl<AlumniinfoMapper, Alumnii
     @Override
     public Alumniinfo getAlumniinfoByPhone(String phone) {
         QueryWrapper<Alumniinfo> stringQueryWrapper = new QueryWrapper<>();
-        stringQueryWrapper.eq("contract", phone);
+        stringQueryWrapper.eq("contact", phone);
         return getBaseMapper().selectOne(stringQueryWrapper);
     }
 
