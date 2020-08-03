@@ -22,7 +22,7 @@ public class AlumniinfoServiceImpl extends ServiceImpl<AlumniinfoMapper, Alumnii
     @Override
     public Integer saveInfo(Alumniinfo alumniinfo) {
         //手机号验证,防止重复认证
-        if (getAlumniinfoByPhone(alumniinfo.getContact()) != null) {
+        if (alumniinfo != null && getAlumniinfoByPhone(alumniinfo.getContact()) != null) {
             return SQLResult.EXIST_DATA;
         }
         return getBaseMapper().insert(alumniinfo);
